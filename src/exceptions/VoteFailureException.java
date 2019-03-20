@@ -1,6 +1,6 @@
-package interfaces;
+package exceptions;
 
-public class VoteFailException extends Exception{
+public class VoteFailureException extends Exception{
 
     public final static int REASON_NO_MATCH = 0;
     public final static int REASON_NO_MAJORITY = 1;
@@ -8,7 +8,7 @@ public class VoteFailException extends Exception{
 
     private int reason;
 
-    public VoteFailException(String message, int reason){
+    public VoteFailureException(String message, int reason){
         super(message);
         this.reason= reason;
     }
