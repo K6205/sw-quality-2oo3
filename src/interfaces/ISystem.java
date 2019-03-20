@@ -1,6 +1,6 @@
 package interfaces;
 
 public interface ISystem {
-    //TODO
+    double calcReliability(int n, double[] failureRates, double t);
 
 }
