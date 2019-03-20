@@ -9,9 +9,8 @@ import java.util.Map;
 
 public class MajorityVoter implements IVoter {
 
-
     @Override
-    public double vote(double[] results) throws RuntimeException, VoteFailureException {
+    public double vote(double[] results) throws VoteFailureException {
         Map<Double, Integer> stats = new LinkedHashMap<>();
         for (double result : results) {
             int votes = stats.getOrDefault(result, 0);

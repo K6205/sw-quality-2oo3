@@ -5,7 +5,7 @@ import interfaces.ISystem;
 public class SystemFelix implements ISystem {
 
     @Override
-    public double calcReliability(double[] failureRates, double t) {
+    public double calcReliability(Double[] failureRates, double t) {
         double p = 1f;
         for (double failureRate : failureRates) {
             p *= 1 - this.reliability(failureRate, t);

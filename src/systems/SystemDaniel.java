@@ -5,7 +5,7 @@ import interfaces.ISystem;
 public class SystemDaniel implements ISystem {
 
     @Override
-    public double calcReliability(double[] failureRates, double t){
+    public double calcReliability(Double[] failureRates, double t){
 
         double tempRes = 1;
 
