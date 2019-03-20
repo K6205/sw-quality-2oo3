@@ -10,5 +10,5 @@ public interface IVoter {
      * @return result based on 2/3 vote
      * @throws RuntimeException if not 3 elements in result or 2/3 vote fails
      */
-    double vote(double[] results) throws RuntimeException;
+    double vote(double[] results) throws RuntimeException, VoteFailException;
 }
