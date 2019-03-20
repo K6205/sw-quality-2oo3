@@ -1,7 +1,7 @@
 package voter;
 
+import exceptions.VoteFailureException;
 import interfaces.IVoter;
-import interfaces.VoteFailException;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -11,7 +11,7 @@ public class MajorityVoter implements IVoter {
 
 
     @Override
-    public double vote(double[] results) throws RuntimeException, VoteFailException {
+    public double vote(double[] results) throws RuntimeException, VoteFailureException {
         Map<Double, Integer> stats = new LinkedHashMap<>();
         for (double result : results) {
             int votes = stats.getOrDefault(result, 0);
@@ -28,7 +28,7 @@ public class MajorityVoter implements IVoter {
             }
         }
 
-        int errorType = someIdenticalResults ? VoteFailException.REASON_NO_MAJORITY : VoteFailException.REASON_NO_MATCH;
-        throw new VoteFailException("No majority.", errorType);
+        int errorType = someIdenticalResults ? VoteFailureException.REASON_NO_MAJORITY : VoteFailureException.REASON_NO_MATCH;
+        throw new VoteFailureException("No majority.", errorType);
     }
 }
